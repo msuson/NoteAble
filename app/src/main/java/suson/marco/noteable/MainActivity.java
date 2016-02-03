@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             R.raw.string_6_note_e};
     private int currentNote = new Random().nextInt(notes.length);
     private int previousNote;
+    private final MediaPlayer player = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         centerImage = (ImageView) findViewById(R.id.centerImage);
-        final MediaPlayer player = new MediaPlayer();
+        //final MediaPlayer player = new MediaPlayer();
         AssetFileDescriptor afd = MainActivity.this.getResources().openRawResourceFd(notes[currentNote]);
         try {
             player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getDeclaredLength());
@@ -72,38 +73,32 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                centerImage.setImageResource(R.drawable.ferrocircle);
                 Random rand = new Random();
                 previousNote = currentNote;
                 currentNote = rand.nextInt(notes.length);
-                AssetFileDescriptor afd = MainActivity.this.getResources().openRawResourceFd(notes[currentNote]);
-                if (player.isPlaying())
-                    player.stop();
-                try {
-                    player.reset();
-                    player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getDeclaredLength());
-                    afd.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                setNote(currentNote);
             }
         });
         prevButton = (Button) findViewById(R.id.prevButton);
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                centerImage.setImageResource(R.drawable.ferrocircle);
-                AssetFileDescriptor afd = MainActivity.this.getResources().openRawResourceFd(notes[previousNote]);
-                if (player.isPlaying())
-                    player.stop();
-                try {
-                    player.reset();
-                    player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getDeclaredLength());
-                    afd.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                currentNote = previousNote;
+                setNote(currentNote);
             }
         });
+    }
+    protected void setNote(int currentNote) {
+        centerImage.setImageResource(R.drawable.ferrocircle);
+        AssetFileDescriptor afd = MainActivity.this.getResources().openRawResourceFd(notes[currentNote]);
+        if (player.isPlaying())
+            player.stop();
+        try {
+            player.reset();
+            player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getDeclaredLength());
+            afd.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
