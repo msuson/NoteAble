@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/LightSteelBlue"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,6 +12,7 @@
     tools:context="suson.marco.noteable.MainActivity">
 
     <ImageView
+        android:id="@+id/centerImage"
         android:layout_weight="5"
         android:src="@drawable/ferrocircle"
         android:layout_width="wrap_content"
@@ -35,6 +37,7 @@
         android:layout_gravity="center">
 
         <Button
+            android:id="@+id/prevButton"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,6 +45,7 @@
             android:text="Prev"/>
 
         <Button
+            android:id="@+id/playButton"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,6 +53,7 @@
             android:text="Play"/>
 
         <Button
+            android:id="@+id/nextButton"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
