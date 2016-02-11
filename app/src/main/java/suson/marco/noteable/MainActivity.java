@@ -7,9 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.Random;
+
+import be.tarsos.dsp.AudioDispatcher;
+import be.tarsos.dsp.AudioEvent;
+import be.tarsos.dsp.AudioProcessor;
+import be.tarsos.dsp.io.android.AudioDispatcherFactory;
+import be.tarsos.dsp.pitch.PitchDetectionHandler;
+import be.tarsos.dsp.pitch.PitchDetectionResult;
+import be.tarsos.dsp.pitch.PitchProcessor;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,13 +35,32 @@ public class MainActivity extends AppCompatActivity {
     private int previousNote;
     private final MediaPlayer player = new MediaPlayer();
 
+    //private final AudioDispatcher dispatcher = AudioDispatcherFactory.fromDefaultMicrophone(22050, 1024, 0);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+   //     final PitchDetectionHandler pdh = new PitchDetectionHandler() {
+   //         @Override
+   //         public void handlePitch(PitchDetectionResult pitchDetectionResult, AudioEvent audioEvent) {
+   //             final float pitchInHz = pitchDetectionResult.getPitch();
+   //             runOnUiThread(new Runnable() {
+   //                 @Override
+   //                 public void run() {
+   //                     String pitch = ""+pitchInHz;
+   //                     Toast toast = Toast.makeText(MainActivity.this, pitch, Toast.LENGTH_SHORT);
+   //                     toast.show();
+   //                 }
+   //             });
+   //         }
+   //     };
+   //     final AudioProcessor temp = new PitchProcessor(PitchProcessor.PitchEstimationAlgorithm.FFT_YIN, 22050, 1024, pdh);
+   //     dispatcher.addAudioProcessor(temp);
+        //new Thread(dispatcher, "Audio Processor").start();
+
         centerImage = (ImageView) findViewById(R.id.centerImage);
-        //final MediaPlayer player = new MediaPlayer();
         AssetFileDescriptor afd = MainActivity.this.getResources().openRawResourceFd(notes[currentNote]);
         try {
             player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getDeclaredLength());
@@ -64,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 try {
                     player.prepareAsync();
+     //               dispatcher.addAudioProcessor(temp);
+    //                new Thread(dispatcher, "Audio Processor").start();
                 } catch (IllegalStateException e) {
                     e.printStackTrace();
                 }
