@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+    <RadioButton
+        android:id="@+id/no_capo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Capo"/>
+    <RadioButton
+        android:id="@+id/fret1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1st Fret"/>
+    <RadioButton
+        android:id="@+id/fret2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2nd Fret"/>
+    <RadioButton
+        android:id="@+id/fret3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3rd Fret"/>
+    <RadioButton
+        android:id="@+id/fret4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4th Fret"/>
+    <RadioButton
+        android:id="@+id/fret5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5th Fret"/>
+    <RadioButton
+        android:id="@+id/fret6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6th Fret"/>
+    <RadioButton
+        android:id="@+id/fret7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7th Fret"/>
+    <RadioButton
+        android:id="@+id/fret8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8th Fret"/>
+    <RadioButton
+        android:id="@+id/fret9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9th Fret"/>
+    <RadioButton
+        android:id="@+id/fret10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10th Fret"/>
+    <RadioButton
+        android:id="@+id/fret11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11th Fret"/>
+</RadioGroup>
