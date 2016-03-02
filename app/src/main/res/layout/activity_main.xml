@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/strings_smaller"
                 android:background="@null"
-                android:padding="20dp"/>
+                android:padding="18dp"/>
 
             <ImageButton
                 android:id="@+id/string5"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/strings_smaller"
                 android:background="@null"
-                android:padding="20dp"/>
+                android:padding="18dp"/>
 
             <ImageButton
                 android:id="@+id/string4"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/strings_smaller"
                 android:background="@null"
-                android:padding="20dp"/>
+                android:padding="18dp"/>
 
             <ImageButton
                 android:id="@+id/string3"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/strings_smaller"
                 android:background="@null"
-                android:padding="20dp"/>
+                android:padding="18dp"/>
 
             <ImageButton
                 android:id="@+id/string2"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/strings_smaller"
                 android:background="@null"
-                android:padding="20dp"/>
+                android:padding="18dp"/>
 
             <ImageButton
                 android:id="@+id/string1"
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/strings_smaller"
                 android:background="@null"
-                android:padding="20dp"/>
+                android:padding="18dp"/>
 
         </LinearLayout>
 
@@ -91,10 +91,11 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bridge"
+                android:src="@drawable/guitar_bridge"
                 android:adjustViewBounds="true"/>
 
             <LinearLayout
+                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -102,6 +103,7 @@
 
                 <ImageButton
                     android:paddingTop="10dp"
+                    android:paddingRight="10dp"
                     android:id="@+id/prevButton"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
@@ -110,7 +112,6 @@
                     android:background="@null"/>
 
                 <ImageButton
-                    android:paddingTop="2dp"
                     android:id="@+id/playButton"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -120,6 +121,7 @@
 
                 <ImageButton
                     android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
                     android:id="@+id/nextButton"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
