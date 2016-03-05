@@ -5,8 +5,163 @@
     android:padding="12dp">
 
     <TextView
+        android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NoteAble Ear Training\nVersion 2.1"/>
+        android:text="NoteAble Ear Training\nVersion: 2.2"/>
+
+    <TextView
+        android:id="@+id/howTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about"
+        android:paddingTop="10dp"
+        android:text="How to use:"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/howTo"
+        android:text="1) Press "/>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/playIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@+id/step1"
+        android:layout_below="@+id/howTo"
+        android:src="@drawable/play_icon_tut"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/playIcon"
+        android:layout_below="@+id/howTo"
+        android:text=" to hear a note."/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step1"
+        android:text="2) When you see "/>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step2.1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/step1"
+        android:layout_toRightOf="@+id/step2"
+        android:src="@drawable/active2"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step2.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step1"
+        android:layout_toRightOf="@+id/step2.1"
+        android:text=" tap the string of that note."/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step2"
+        android:text="3) If you see "/>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step3.1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/step2"
+        android:layout_toRightOf="@id/step3"
+        android:src="@drawable/correct_response2"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step3.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step2"
+        android:layout_toRightOf="@id/step3.1"
+        android:text=" you played the right note!"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step3"
+        android:text="4) If you see "/>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step4.1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/step3"
+        android:layout_toRightOf="@id/step4"
+        android:src="@drawable/incorrect_response2"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step4.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step3"
+        android:layout_toRightOf="@id/step4.1"
+        android:text=" you played the wrong note, try again."/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step4"
+        android:text="5) Press "/>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step5.1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@+id/step5"
+        android:layout_below="@+id/step4"
+        android:src="@drawable/prev_icon_tut"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step5.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/step5.1"
+        android:layout_below="@+id/step4"
+        android:text=" for last note and "/>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/step5.3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@id/step5.2"
+        android:layout_below="@id/step4"
+        android:src="@drawable/next_icon_tut"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/step5.3"
+        android:layout_below="@id/step4"
+        android:text=" for next note."/>
 
 </RelativeLayout>

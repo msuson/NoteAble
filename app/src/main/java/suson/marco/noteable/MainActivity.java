@@ -5,11 +5,13 @@ import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.Random;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             R.raw.string_4_note_d,
             R.raw.string_5_note_a,
             R.raw.string_6_note_e};
+    private String[] noteName = {"e", "B", "G", "D", "A", "E"};
     private int currentNote = new Random().nextInt(notes.length);
     private int previousNote;
     private final MediaPlayer player = new MediaPlayer();
@@ -101,8 +104,12 @@ public class MainActivity extends AppCompatActivity {
             stringButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(index == currentNote && ready)
+                    if(index == currentNote && ready) {
+                        Toast toast = Toast.makeText(MainActivity.this, noteName[index], Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, -190);
+                        toast.show();
                         centerImage.setImageResource(R.drawable.correct_response2);
+                    }
                     else if(ready)
                         centerImage.setImageResource(R.drawable.incorrect_response2);
                     AssetFileDescriptor afd = MainActivity.this.getResources().openRawResourceFd(notes[index]);
